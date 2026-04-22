@@ -51,8 +51,7 @@ A stunning, high-end password validation form with real-time feedback and beauti
 │   └── src/
 │       └── index.js        # JavaScript validation logic
 ├── index.html              # Alternative standalone version
-├── index.js                # Alternative standalone JS
-└── README.md               # This file
+└── README.md               # README file
 ```
 
 ## 💻 Usage

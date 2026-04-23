@@ -12,6 +12,16 @@ const confirmpassword = document.getElementById("confirmed");
 const errorconfirm = document.getElementById("error");
 const passwordtoggle = document.querySelectorAll(".toggle-password");
 const togreen = document.querySelectorAll(".togreen");
+function updateField() {
+  const select = document.getElementById("country-code");
+  const input = document.getElementById("phone");
+  const selected = select.options[select.selectedIndex];
+
+  input.pattern = selected.getAttribute("data-pattern");
+  input.placeholder = selected.getAttribute("data-placeholder");
+
+  input.value = "";
+}
 function checklength(passsword) {
   if (passsword.length < 10) {
     Status.checked = false;

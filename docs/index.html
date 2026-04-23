@@ -18,12 +18,12 @@
       }
 
       body {
-        background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+        background: linear-gradient(135deg, #000428 0%, #4b667d 100%);
         background-attachment: fixed;
       }
 
       .glass-morphism {
-        background: rgba(0, 20, 40, 0.7);
+        background: rgba(16, 52, 87, 0.7);
         backdrop-filter: blur(14px);
         border: 1px solid rgba(59, 130, 246, 0.2);
         box-shadow:
@@ -199,7 +199,7 @@
       }
 
       .error-message {
-        animation: shake 0.5s ease;
+        animation: shake 1s ease;
       }
 
       @keyframes shake {
@@ -228,6 +228,18 @@
           opacity: 1;
           transform: scale(1);
         }
+      }
+      option {
+        background-color: #1f2937; /* Matches bg-gray-800 */
+        color: white;
+      }
+      #country-code::-webkit-scrollbar {
+        display: none; /* Hides the scrollbar for Chrome/Safari/Edge */
+      }
+
+      #country-code {
+        -ms-overflow-style: none; /* Hides for older IE and Edge */
+        scrollbar-width: none; /* Hides for Firefox */
       }
     </style>
   </head>
@@ -343,15 +355,166 @@
             Phone Number
           </label>
           <div class="relative">
+            <div class="absolute inset-y-0 left-0 flex items-center">
+              <select
+                onclick="updateField()"
+                id="country-code"
+                class="bg-transparent text-gray-400 text-sm py-2 sm:py-3 pl-3 pr-2 border-r border-gray-700 outline-none rounded-l-lg appearance-none cursor-pointer"
+                style="width: fit-content; min-width: 70px"
+              >
+                <option
+                  value="+251"
+                  data-pattern="[97][0-9]{8}"
+                  data-placeholder="912 345 678"
+                >
+                  🇪🇹 +251
+                </option>
+                <option
+                  value="+1"
+                  data-pattern="[0-9]{10}"
+                  data-placeholder="202 555 0123"
+                >
+                  🇺🇸 +1
+                </option>
+                <option
+                  value="+44"
+                  data-pattern="[0-9]{10}"
+                  data-placeholder="7700 900123"
+                >
+                  🇬🇧 +44
+                </option>
+                <option
+                  value="+254"
+                  data-pattern="[0-9]{9}"
+                  data-placeholder="712 345 678"
+                >
+                  🇰🇪 +254
+                </option>
+                <option
+                  value="+971"
+                  data-pattern="[0-9]{9}"
+                  data-placeholder="50 123 4567"
+                >
+                  🇦🇪 +971
+                </option>
+                <option
+                  value="+91"
+                  data-pattern="[0-9]{10}"
+                  data-placeholder="98123 45678"
+                >
+                  🇮🇳 +91
+                </option>
+                <option
+                  value="+255"
+                  data-pattern="[0-9]{9}"
+                  data-placeholder="612 345 678"
+                >
+                  🇹🇿 +255
+                </option>
+                <option
+                  value="+256"
+                  data-pattern="[0-9]{9}"
+                  data-placeholder="712 345 678"
+                >
+                  🇺🇬 +256
+                </option>
+                <option
+                  value="+252"
+                  data-pattern="[0-9]{9}"
+                  data-placeholder="61 2345678"
+                >
+                  🇸🇴 +252
+                </option>
+                <option
+                  value="+253"
+                  data-pattern="[0-9]{8}"
+                  data-placeholder="77 12 34 56"
+                >
+                  🇩🇯 +253
+                </option>
+                <option
+                  value="+249"
+                  data-pattern="[0-9]{9}"
+                  data-placeholder="91 234 5678"
+                >
+                  🇸🇩 +249
+                </option>
+                <option
+                  value="+234"
+                  data-pattern="[0-9]{10}"
+                  data-placeholder="803 123 4567"
+                >
+                  🇳🇬 +234
+                </option>
+                <option
+                  value="+27"
+                  data-pattern="[0-9]{9}"
+                  data-placeholder="82 123 4567"
+                >
+                  🇿🇦 +27
+                </option>
+                <option
+                  value="+966"
+                  data-pattern="5[0-9]{8}"
+                  data-placeholder="51 234 5678"
+                >
+                  🇸🇦 +966
+                </option>
+                <option
+                  value="+49"
+                  data-pattern="[0-9]{10,11}"
+                  data-placeholder="151 23456789"
+                >
+                  🇩🇪 +49
+                </option>
+                <option
+                  value="+33"
+                  data-pattern="[0-9]{9}"
+                  data-placeholder="6 12 34 56 78"
+                >
+                  🇫🇷 +33
+                </option>
+                <option
+                  value="+86"
+                  data-pattern="[0-9]{11}"
+                  data-placeholder="138 1234 5678"
+                >
+                  🇨🇳 +86
+                </option>
+                <option
+                  value="+81"
+                  data-pattern="[0-9]{10}"
+                  data-placeholder="90 1234 5678"
+                >
+                  🇯🇵 +81
+                </option>
+                <option
+                  value="+61"
+                  data-pattern="[0-9]{9}"
+                  data-placeholder="412 345 678"
+                >
+                  🇦🇺 +61
+                </option>
+                <option
+                  value="+55"
+                  data-pattern="[0-9]{11}"
+                  data-placeholder="11 91234 5678"
+                >
+                  🇧🇷 +55
+                </option>
+                <!-- Add more countries as needed -->
+              </select>
+            </div>
             <input
               type="tel"
               required
               id="phone"
-              pattern="[+]251[97][0-9]{8}"
+              pattern="[0-9]{6,14}"
               maxlength="15"
               oninput="this.value = this.value.replace(/[a-zA-Z]/g, '')"
-              placeholder="+251"
-              class="focus:border-sky-500 focus:outline focus:outline-sky-500 input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
+              placeholder="912 34 56 78"
+              title="Please enter a valid phone number(6-14 digits) or count yode "
+              class="focus:border-sky-500 focus:outline focus:outline-sky-500 input-field w-full pl-24 pr-3 py-2 sm:py-3 rounded-lg bg-gray-800 text-white placeholder-gray-500 text-sm"
             />
 
             <div

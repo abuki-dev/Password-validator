@@ -11,6 +11,7 @@ const successMessage = document.getElementById("success-message");
 const confirmpassword = document.getElementById("confirmed");
 const errorconfirm = document.getElementById("error");
 const passwordtoggle = document.querySelectorAll(".toggle-password");
+const togreen = document.querySelectorAll(".togreen");
 function checklength(passsword) {
   if (passsword.length < 10) {
     Status.checked = false;
@@ -18,17 +19,28 @@ function checklength(passsword) {
     Status.checked = true;
   }
 }
+function Turneverytugngeren(yes) {
+  for (const color of togreen) {
+    if (yes === true) {
+      color.setAttribute("stroke", "green");
+    } else {
+      color.setAttribute("stroke", "white");
+    }
+  }
+}
 function Chekconfirmedpassword(entered, confirmed) {
   if (entered === confirmed && entered !== "" && confirmed !== "") {
     errorconfirm.textContent = "you are ready to go";
-    Chekall(true);
     errorconfirm.classList.remove("text-red-400");
     errorconfirm.classList.add("text-green-400");
+    Chekall(true);
+    Turneverytugngeren(true);
   } else {
     errorconfirm.textContent = "password must be the same";
     errorconfirm.classList.remove("text-green-400");
     errorconfirm.classList.add("text-red-400");
     Chekall(false);
+    Turneverytugngeren(false);
   }
 }
 
@@ -115,13 +127,6 @@ function Chekall(yes) {
   }
 
   signin.disabled = !(allmarked && yes);
-  for (const toggle of passwordtoggle) {
-    if (errorconfirm.textContent.includes("ready")) {
-      toggle.setAttribute("stroke", "green");
-    } else if (errorconfirm.textContent.includes("must")) {
-      toggle.setAttribute("stroke", "red");
-    }
-  }
 }
 function Cekeverytgn() {
   checklength(inputarea.value);
@@ -142,13 +147,13 @@ function toggled(toggle) {
   const grandparent = toggle.closest(".relative");
   const firstChild = grandparent.firstElementChild;
   if (
-    toggle.getAttribute("stroke") === "red" &&
+    toggle.getAttribute("stroke") === "white" &&
     firstChild.type === "password"
   ) {
     toggle.setAttribute("stroke", "green");
     firstChild.type = "text";
   } else {
-    toggle.setAttribute("stroke", "red");
+    toggle.setAttribute("stroke", "white");
     firstChild.type = "password";
   }
 }

@@ -274,16 +274,17 @@
               name="fullname"
               id="name"
               required
+              oninput="this.value = this.value.replace(/[0-9]/g, '')"
               placeholder="Enter your full name"
-              class="input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
+              class="focus:border-sky-500 focus:outline focus:outline-sky-500 input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
             />
             <div
               class="absolute right-3 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
             >
               <svg
-                class="w-3.5 h-3.5"
+                class="w-3.5 h-3.5 togreen"
                 fill="none"
-                stroke="currentColor"
+                stroke="white"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -311,15 +312,15 @@
               id="email"
               required
               placeholder="your.email@example.com"
-              class="input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
+              class="invalid:border-pink-500 invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500 input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
             />
             <div
               class="absolute right-3 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
             >
               <svg
-                class="w-3.5 h-3.5"
+                class="w-3.5 h-3.5 togreen"
                 fill="none"
-                stroke="currentColor"
+                stroke="white"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -346,16 +347,20 @@
               type="tel"
               required
               id="phone"
-              placeholder="+1 (555) 000-0000"
-              class="input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
+              pattern="[+]251[97][0-9]{8}"
+              maxlength="15"
+              oninput="this.value = this.value.replace(/[a-zA-Z]/g, '')"
+              placeholder="+251"
+              class="focus:border-sky-500 focus:outline focus:outline-sky-500 input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
             />
+
             <div
               class="absolute right-3 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
             >
               <svg
-                class="w-3.5 h-3.5"
+                class="w-3.5 h-3.5 togreen"
                 fill="none"
-                stroke="currentColor"
+                stroke="white"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -383,15 +388,15 @@
               id="passsword"
               max="20"
               placeholder="Create a strong password"
-              class="input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
+              class="focus:border-sky-500 focus:outline focus:outline-sky-500 input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
             />
             <div
               class="absolute right-3 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
             >
               <svg
-                class="w-3.5 h-3.5 toggle-password"
+                class="w-3.5 h-3.5 toggle-password togreen"
                 fill="none"
-                stroke="red"
+                stroke="white"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -407,7 +412,7 @@
 
         <!-- Password Requirements -->
         <div
-          class="bg-black/30 rounded-lg p-3 sm:p-3.5 border border-blue-900/30"
+          class="bg-blend-overlay rounded-lg p-3 sm:p-3.5 border border-blue-900/30"
         >
           <h4 class="text-blue-300 font-semibold mb-2 text-xs sm:text-sm">
             Password Requirements:
@@ -500,15 +505,15 @@
               type="password"
               id="confirmed"
               placeholder="Re-enter your password"
-              class="input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
+              class="focus:border-sky-500 focus:outline focus:outline-sky-500 input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
             />
             <div
               class="absolute right-3 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
             >
               <svg
-                class="w-3.5 h-3.5 toggle-password"
+                class="w-3.5 h-3.5 toggle-password togreen"
                 fill="none"
-                stroke="red"
+                stroke="white"
                 viewBox="0 0 24 24"
               >
                 <path

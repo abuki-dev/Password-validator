@@ -115,12 +115,13 @@ function Chekall(yes) {
   }
 
   signin.disabled = !(allmarked && yes);
-  if (signin.disabled === false)
-    for (let toggle of passwordtoggle) {
-      if (errorconfirm.textContent.includes("ready")) {
-        toggle.setAttribute("stroke", "green");
-      }
+  for (const toggle of passwordtoggle) {
+    if (errorconfirm.textContent.includes("ready")) {
+      toggle.setAttribute("stroke", "green");
+    } else if (errorconfirm.textContent.includes("must")) {
+      toggle.setAttribute("stroke", "red");
     }
+  }
 }
 function Cekeverytgn() {
   checklength(inputarea.value);

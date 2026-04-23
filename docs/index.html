@@ -24,16 +24,16 @@
 
       .glass-morphism {
         background: rgba(0, 20, 40, 0.7);
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(14px);
         border: 1px solid rgba(59, 130, 246, 0.2);
         box-shadow:
-          0 8px 32px 0 rgba(0, 0, 0, 0.5),
-          0 0 80px rgba(59, 130, 246, 0.1);
+          0 5.6px 22.4px 0 rgba(0, 0, 0, 0.5),
+          0 0 56px rgba(59, 130, 246, 0.1);
       }
 
       .input-field {
         background: rgba(0, 30, 60, 0.5);
-        border: 2px solid rgba(59, 130, 246, 0.3);
+        border: 1.4px solid rgba(59, 130, 246, 0.3);
         transition: all 0.3s ease;
       }
 
@@ -41,8 +41,8 @@
         background: rgba(0, 40, 80, 0.6);
         border-color: #3b82f6;
         box-shadow:
-          0 0 0 4px rgba(59, 130, 246, 0.1),
-          0 0 20px rgba(59, 130, 246, 0.3);
+          0 0 0 2.8px rgba(59, 130, 246, 0.1),
+          0 0 14px rgba(59, 130, 246, 0.3);
         outline: none;
       }
 
@@ -59,10 +59,10 @@
 
       .checkbox-input {
         appearance: none;
-        width: 24px;
-        height: 24px;
-        border: 2px solid rgba(59, 130, 246, 0.5);
-        border-radius: 6px;
+        width: 16.8px;
+        height: 16.8px;
+        border: 1.4px solid rgba(59, 130, 246, 0.5);
+        border-radius: 4.2px;
         background: rgba(0, 30, 60, 0.5);
         cursor: pointer;
         position: relative;
@@ -77,35 +77,35 @@
       .checkbox-input:checked {
         background: linear-gradient(135deg, #3b82f6, #1d4ed8);
         border-color: #3b82f6;
-        box-shadow: 0 0 15px rgba(59, 130, 246, 0.5);
+        box-shadow: 0 0 10.5px rgba(59, 130, 246, 0.5);
       }
 
       .checkbox-input:checked::after {
         content: "";
         position: absolute;
-        left: 7px;
-        top: 3px;
-        width: 6px;
-        height: 12px;
+        left: 4.9px;
+        top: 2.1px;
+        width: 4.2px;
+        height: 8.4px;
         border: solid white;
-        border-width: 0 2px 2px 0;
+        border-width: 0 1.4px 1.4px 0;
         transform: rotate(45deg);
       }
 
       .glow-text {
-        text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        text-shadow: 0 0 14px rgba(59, 130, 246, 0.5);
       }
 
       .btn-primary {
         background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-        box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+        box-shadow: 0 2.8px 14px rgba(59, 130, 246, 0.4);
         transition: all 0.3s ease;
       }
 
       .btn-primary:hover:not(:disabled) {
         background: linear-gradient(135deg, #2563eb, #1e40af);
-        box-shadow: 0 6px 30px rgba(59, 130, 246, 0.6);
-        transform: translateY(-2px);
+        box-shadow: 0 4.2px 21px rgba(59, 130, 246, 0.6);
+        transform: translateY(-1.4px);
       }
 
       .btn-primary:disabled {
@@ -129,14 +129,14 @@
       .shape {
         position: absolute;
         border-radius: 50%;
-        filter: blur(40px);
+        filter: blur(28px);
         opacity: 0.3;
         animation: float 20s infinite ease-in-out;
       }
 
       .shape:nth-child(1) {
-        width: 300px;
-        height: 300px;
+        width: 210px;
+        height: 210px;
         background: #3b82f6;
         top: 10%;
         left: 10%;
@@ -144,8 +144,8 @@
       }
 
       .shape:nth-child(2) {
-        width: 200px;
-        height: 200px;
+        width: 140px;
+        height: 140px;
         background: #1d4ed8;
         top: 60%;
         right: 10%;
@@ -153,8 +153,8 @@
       }
 
       .shape:nth-child(3) {
-        width: 250px;
-        height: 250px;
+        width: 175px;
+        height: 175px;
         background: #60a5fa;
         bottom: 10%;
         left: 50%;
@@ -167,10 +167,10 @@
           transform: translate(0, 0) scale(1);
         }
         33% {
-          transform: translate(30px, -30px) scale(1.1);
+          transform: translate(21px, -21px) scale(1.1);
         }
         66% {
-          transform: translate(-20px, 20px) scale(0.9);
+          transform: translate(-14px, 14px) scale(0.9);
         }
       }
 
@@ -181,7 +181,7 @@
       @keyframes slideIn {
         from {
           opacity: 0;
-          transform: translateY(30px);
+          transform: translateY(21px);
         }
         to {
           opacity: 1;
@@ -194,7 +194,7 @@
       }
 
       .requirement-item:hover {
-        transform: translateX(5px);
+        transform: translateX(3.5px);
         background: rgba(59, 130, 246, 0.05);
       }
 
@@ -208,10 +208,10 @@
           transform: translateX(0);
         }
         25% {
-          transform: translateX(-10px);
+          transform: translateX(-7px);
         }
         75% {
-          transform: translateX(10px);
+          transform: translateX(7px);
         }
       }
 
@@ -231,7 +231,7 @@
       }
     </style>
   </head>
-  <body class="min-h-screen flex items-center justify-center p-4 relative">
+  <body class="min-h-screen flex items-center justify-center p-3 relative">
     <!-- Floating Background Shapes -->
     <div class="floating-shapes">
       <div class="shape"></div>
@@ -241,30 +241,30 @@
 
     <!-- Main Container -->
     <div
-      class="glass-morphism rounded-3xl p-6 sm:p-8 md:p-12 max-w-2xl w-full relative z-10 slide-in"
+      class="glass-morphism rounded-2xl p-4 sm:p-6 md:p-8 max-w-xl w-full relative z-10 slide-in"
     >
       <!-- Header -->
-      <div class="text-center mb-8">
+      <div class="text-center mb-6">
         <h1
-          class="text-4xl sm:text-5xl md:text-6xl font-bold text-white glow-text mb-2"
+          class="text-3xl sm:text-4xl md:text-5xl font-bold text-white glow-text mb-1.5"
         >
           BK-TECH <span class="text-blue-400">ACADEMY</span>
         </h1>
-        <h3 class="text-xl sm:text-2xl font-semibold text-blue-300 mb-2">
+        <h3 class="text-base sm:text-lg font-semibold text-blue-300 mb-1.5">
           Create Account
         </h3>
-        <p class="text-gray-400 text-sm sm:text-base">
+        <p class="text-gray-400 text-xs sm:text-sm">
           Join BK-TECH Academy today
         </p>
       </div>
 
       <!-- Form -->
-      <form class="space-y-5">
+      <form class="space-y-3.5">
         <!-- Full Name -->
         <div class="relative">
           <label
             for="name"
-            class="block text-blue-200 font-medium mb-2 text-sm uppercase tracking-wide"
+            class="block text-blue-200 font-medium mb-1.5 text-xs uppercase tracking-wide"
           >
             Full Name
           </label>
@@ -275,13 +275,13 @@
               id="name"
               required
               placeholder="Enter your full name"
-              class="input-field w-full focus:border-sky-500 focus:outline focus:outline-sky-500 px-4 py-3 sm:py-4 rounded-xl text-white placeholder-gray-500 pr-12"
+              class="input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
             />
             <div
-              class="absolute right-4 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
+              class="absolute right-3 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
             >
               <svg
-                class="w-5 h-5"
+                class="w-3.5 h-3.5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -301,7 +301,7 @@
         <div class="relative">
           <label
             for="email"
-            class="block text-blue-200 font-medium mb-2 text-sm uppercase tracking-wide"
+            class="block text-blue-200 font-medium mb-1.5 text-xs uppercase tracking-wide"
           >
             Email Address
           </label>
@@ -311,13 +311,13 @@
               id="email"
               required
               placeholder="your.email@example.com"
-              class="invalid:border-pink-500 invalid:text-pink-600 focus:border-sky-500 focus:outline focus:outline-sky-500 focus:invalid:border-pink-500 focus:invalid:outline-pink-500 input-field w-full px-4 py-3 sm:py-4 rounded-xl text-white placeholder-gray-500 pr-12"
+              class="input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
             />
             <div
-              class="absolute right-4 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
+              class="absolute right-3 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
             >
               <svg
-                class="w-5 h-5"
+                class="w-3.5 h-3.5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -337,7 +337,7 @@
         <div class="relative">
           <label
             for="phone"
-            class="block text-blue-200 font-medium mb-2 text-sm uppercase tracking-wide"
+            class="block text-blue-200 font-medium mb-1.5 text-xs uppercase tracking-wide"
           >
             Phone Number
           </label>
@@ -347,13 +347,13 @@
               required
               id="phone"
               placeholder="+1 (555) 000-0000"
-              class="focus:border-sky-500 focus:outline focus:outline-sky-500 input-field w-full px-4 py-3 sm:py-4 rounded-xl text-white placeholder-gray-500 pr-12"
+              class="input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
             />
             <div
-              class="absolute right-4 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
+              class="absolute right-3 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
             >
               <svg
-                class="w-5 h-5"
+                class="w-3.5 h-3.5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -373,7 +373,7 @@
         <div class="relative">
           <label
             for="passsword"
-            class="block text-blue-200 font-medium mb-2 text-sm uppercase tracking-wide"
+            class="block text-blue-200 font-medium mb-1.5 text-xs uppercase tracking-wide"
           >
             Password
           </label>
@@ -383,13 +383,13 @@
               id="passsword"
               max="20"
               placeholder="Create a strong password"
-              class="focus:border-sky-500 focus:outline focus:outline-sky-500 input-field w-full px-4 py-3 sm:py-4 rounded-xl text-white placeholder-gray-500 pr-12"
+              class="input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
             />
             <div
-              class="absolute right-4 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
+              class="absolute right-3 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
             >
               <svg
-                class="w-5 h-5 toggle-password"
+                class="w-3.5 h-3.5 toggle-password"
                 fill="none"
                 stroke="red"
                 viewBox="0 0 24 24"
@@ -407,14 +407,14 @@
 
         <!-- Password Requirements -->
         <div
-          class="bg-black/30 rounded-xl p-4 sm:p-5 border border-blue-900/30"
+          class="bg-black/30 rounded-lg p-3 sm:p-3.5 border border-blue-900/30"
         >
-          <h4 class="text-blue-300 font-semibold mb-3 text-sm sm:text-base">
+          <h4 class="text-blue-300 font-semibold mb-2 text-xs sm:text-sm">
             Password Requirements:
           </h4>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
             <label
-              class="requirement-item flex items-center gap-3 p-2 rounded-lg cursor-pointer"
+              class="requirement-item flex items-center gap-2 p-1.5 rounded-lg cursor-pointer"
             >
               <input
                 type="checkbox"
@@ -422,13 +422,11 @@
                 class="checkbox-input abuki"
                 disabled
               />
-              <span class="text-gray-300 text-xs sm:text-sm"
-                >At least 10 characters</span
-              >
+              <span class="text-gray-300 text-xs">At least 10 characters</span>
             </label>
 
             <label
-              class="requirement-item flex items-center gap-3 p-2 rounded-lg cursor-pointer"
+              class="requirement-item flex items-center gap-2 p-1.5 rounded-lg cursor-pointer"
             >
               <input
                 type="checkbox"
@@ -436,13 +434,11 @@
                 class="checkbox-input abuki"
                 disabled
               />
-              <span class="text-gray-300 text-xs sm:text-sm"
-                >No special characters</span
-              >
+              <span class="text-gray-300 text-xs">No special characters</span>
             </label>
 
             <label
-              class="requirement-item flex items-center gap-3 p-2 rounded-lg cursor-pointer"
+              class="requirement-item flex items-center gap-2 p-1.5 rounded-lg cursor-pointer"
             >
               <input
                 type="checkbox"
@@ -450,13 +446,11 @@
                 disabled
                 id="uppercases"
               />
-              <span class="text-gray-300 text-xs sm:text-sm"
-                >1 Uppercase letter</span
-              >
+              <span class="text-gray-300 text-xs">1 Uppercase letter</span>
             </label>
 
             <label
-              class="requirement-item flex items-center gap-3 p-2 rounded-lg cursor-pointer"
+              class="requirement-item flex items-center gap-2 p-1.5 rounded-lg cursor-pointer"
             >
               <input
                 type="checkbox"
@@ -464,13 +458,11 @@
                 disabled
                 id="smalleters"
               />
-              <span class="text-gray-300 text-xs sm:text-sm"
-                >1 Lowercase letter</span
-              >
+              <span class="text-gray-300 text-xs">1 Lowercase letter</span>
             </label>
 
             <label
-              class="requirement-item flex items-center gap-3 p-2 rounded-lg cursor-pointer"
+              class="requirement-item flex items-center gap-2 p-1.5 rounded-lg cursor-pointer"
             >
               <input
                 type="checkbox"
@@ -478,13 +470,11 @@
                 disabled
                 id="Numbers"
               />
-              <span class="text-gray-300 text-xs sm:text-sm"
-                >At least 1 number</span
-              >
+              <span class="text-gray-300 text-xs">At least 1 number</span>
             </label>
 
             <label
-              class="requirement-item flex items-center gap-3 p-2 rounded-lg cursor-pointer"
+              class="requirement-item flex items-center gap-2 p-1.5 rounded-lg cursor-pointer"
             >
               <input
                 type="checkbox"
@@ -492,9 +482,7 @@
                 class="checkbox-input abuki"
                 disabled
               />
-              <span class="text-gray-300 text-xs sm:text-sm"
-                >At least 1 symbol</span
-              >
+              <span class="text-gray-300 text-xs">At least 1 symbol</span>
             </label>
           </div>
         </div>
@@ -503,7 +491,7 @@
         <div class="relative">
           <label
             for="confirmed"
-            class="block text-blue-200 font-medium mb-2 text-sm uppercase tracking-wide"
+            class="block text-blue-200 font-medium mb-1.5 text-xs uppercase tracking-wide"
           >
             Confirm Password
           </label>
@@ -512,13 +500,13 @@
               type="password"
               id="confirmed"
               placeholder="Re-enter your password"
-              class="focus:border-sky-500 focus:outline focus:outline-sky-500 input-field w-full px-4 py-3 sm:py-4 rounded-xl text-white placeholder-gray-500 pr-12"
+              class="input-field w-full px-3 py-2 sm:py-3 rounded-lg text-white placeholder-gray-500 pr-9 text-sm"
             />
             <div
-              class="absolute right-4 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
+              class="absolute right-3 top-1/2 -translate-y-1/2 input-icon text-gray-500 transition-colors"
             >
               <svg
-                class="w-5 h-5 toggle-password"
+                class="w-3.5 h-3.5 toggle-password"
                 fill="none"
                 stroke="red"
                 viewBox="0 0 24 24"
@@ -534,17 +522,17 @@
           </div>
           <span
             id="error"
-            class="text-red-400 text-sm mt-2 block error-message"
+            class="text-red-400 text-xs mt-1.5 block error-message"
           ></span>
         </div>
 
         <!-- Submit Button -->
-        <div class="pt-4">
+        <div class="pt-3">
           <button
             disabled
             id="sing-in"
             type="submit"
-            class="btn-primary w-full py-3 sm:py-4 px-6 text-white font-bold rounded-xl text-base sm:text-lg uppercase tracking-wider"
+            class="btn-primary w-full py-2 sm:py-3 px-4 text-white font-bold rounded-lg text-sm sm:text-base uppercase tracking-wider"
           >
             Create Account
           </button>
@@ -553,10 +541,10 @@
         <!-- Success Message -->
         <div
           id="success-msg"
-          class="hidden mt-4 p-4 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl text-white text-center font-semibold success-message"
+          class="hidden mt-3 p-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-lg text-white text-center font-semibold text-sm success-message"
         >
           <svg
-            class="w-6 h-6 inline-block mr-2"
+            class="w-4 h-4 inline-block mr-1.5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -572,8 +560,8 @@
         </div>
 
         <!-- Login Link -->
-        <div class="text-center pt-4">
-          <p class="text-gray-400 text-sm">
+        <div class="text-center pt-3">
+          <p class="text-gray-400 text-xs">
             Already have an account?
             <a
               href="#"
@@ -584,7 +572,6 @@
         </div>
       </form>
     </div>
-
     <script src="./src/index.js"></script>
   </body>
 </html>

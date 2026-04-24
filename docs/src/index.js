@@ -1,4 +1,4 @@
-const inputarea = document.getElementById("passsword");
+const inputarea = document.getElementById("signin-password");
 const Status = document.getElementById("length-checkbox");
 const AllowedChar = document.getElementById("spectial-cacracters");
 const Uppercases = document.getElementById("uppercases");
@@ -12,6 +12,11 @@ const confirmpassword = document.getElementById("confirmed");
 const errorconfirm = document.getElementById("error");
 const passwordtoggle = document.querySelectorAll(".toggle-password");
 const togreen = document.querySelectorAll(".togreen");
+const showsignup = document.getElementById("show-signup");
+const signuppage = document.getElementById("signup-form");
+const loginpage = document.getElementById("login-form");
+const showlogin = document.getElementById("show-login");
+
 function updateField() {
   const select = document.getElementById("country-code");
   const input = document.getElementById("phone");
@@ -172,3 +177,69 @@ for (let toggle of passwordtoggle) {
     toggled(toggle);
   });
 }
+showsignup.addEventListener("click", () => {
+  signuppage.classList.remove("hidden");
+  loginpage.classList.add("hidden");
+});
+showlogin.addEventListener("click", () => {
+  signuppage.classList.add("hidden");
+  loginpage.classList.remove("hidden");
+});
+const form = document.getElementById("userForm");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  //garabig data form local storage
+  const Usersdata = localStorage.getItem("Usersdta") || "[]";
+  const prasedata = JSON.parse(Usersdata);
+  //colllecting form datas
+  //idtrick
+  const Uid =
+    prasedata.length > 0
+      ? Math.max(...prasedata.map((user) => user.id)) + 1
+      : 1;
+  const fullname = document.getElementById("Name").value;
+  const email = document.getElementById("Signin-email").value;
+  const subfix = document.getElementById("phone").value;
+  //coutycode spectial trik
+  const select = document.getElementById("country-code");
+  const preficx = select.options[select.selectedIndex].value;
+  const phone = preficx + subfix;
+  const passsword = document.getElementById("signin-password").value;
+  //object of currunt user
+  const curruntuser = {
+    id: Uid,
+    Name: fullname,
+    Email: email,
+    Phone: phone,
+    Paskey: passsword,
+  };
+  prasedata.push(curruntuser);
+  localStorage.setItem("Usersdta", JSON.stringify(prasedata));
+  form.reset();
+  alert("Data Saved!");
+});
+const login = document.getElementById("login-form");
+login.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const Usersdata = localStorage.getItem("Usersdta") || [];
+  const prasedata = JSON.parse(Usersdata);
+  if (prasedata.length === 0) {
+    alert("NO ACCOUNT INFO FOUND");
+  } else {
+    const useremal = document.getElementById("login-email");
+    const userpaskey = document.getElementById("login-password");
+    let loginSuccess = false;
+    for (const user of prasedata) {
+      if (user.Email === useremal.value && userpaskey.value === user.Paskey);
+      {
+        alert("Hello " + user["Name"]);
+        loginSuccess = true;
+        break;
+      }
+    }
+    if (!loginSuccess) {
+      alert("Invalid email or password!");
+    }
+  }
+});

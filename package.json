@@ -11,13 +11,9 @@
     "doc": "docs"
   },
   "scripts": {
-<<<<<<< HEAD
-    "dev": "npx @tailwindcss/cli -i ./docs/src/input.css -o ./docs/src/output.css --watch"
-=======
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx @tailwindcss/cli -i ./docs/src/input.css -o ./docs/src/output.css --watch",
     "build:css": "tailwindcss -i ./docs/src/input.css -o ./docs/src/output.css --minify",
-    "watch:css": "tailwindcss -i ./docs/src/input.css -o ./docs/src/output.css --watch"
->>>>>>> cff14ba0ab3cb58b556710fda8b10f8e7d55397c
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",

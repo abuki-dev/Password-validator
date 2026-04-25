@@ -229,6 +229,7 @@ form.addEventListener("submit", function (e) {
       Email: email,
       Phone: phone,
       Paskey: passsword,
+      Islogined: false,
     };
     prasedata.push(curruntuser);
     localStorage.setItem("Usersdta", JSON.stringify(prasedata));

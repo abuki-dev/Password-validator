@@ -254,7 +254,7 @@ login.addEventListener("submit", (e) => {
       if (user.Email === useremal.value && userpaskey.value === user.Paskey) {
         alert("Hello " + user["Name"]);
         loginSuccess = true;
-        user["Islogined"] = true;
+        user.Islogined = loginSuccess;
         localStorage.setItem("Usersdta", JSON.stringify(Usersdata));
         window.location.replace("/login");
         break;

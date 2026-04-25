@@ -227,41 +227,80 @@ form.addEventListener("submit", function (e) {
       Email: email,
       Phone: phone,
       Paskey: passsword,
-      Islogined: false,
     };
 
     prasedata.push(curruntuser);
     localStorage.setItem("Usersdata", JSON.stringify(prasedata));
+    const Pendinng = localStorage.getItem("Pending") || "[]";
+    const PendigArray = JSON.parse(Pendinng);
+    const user = {
+      Email: email,
+      Passkey: passsword,
+      Status: "pending",
+    };
+    PendigArray.push(user);
+    localStorage.setItem("Pending", JSON.stringify(PendigArray));
     form.reset();
-    alert("Data Saved!");
+    alert("account created sing up to activate it ");
   }
 });
-const login = document.getElementById("user-login-form");
-login.addEventListener("submit", (e) => {
+const signuser = document.getElementById("user-login-form");
+signuser.addEventListener("submit", (e) => {
   e.preventDefault();
-  const Usersdata = localStorage.getItem("Usersdata");
-  const prasedata = Usersdata ? JSON.parse(Usersdata) : [];
-  if (prasedata.length === 0) {
-    alert("NO ACCOUNT INFO FOUND");
-  } else {
-    const useremal = document.getElementById("login-email");
-    const userpaskey = document.getElementById("login-password");
-    let loginSuccess = false;
-
-    for (const user of prasedata) {
-      // Fix: Removed the ; from the end of this line
-      if (user.Email === useremal.value && userpaskey.value === user.Paskey) {
-        alert("Hello " + user["Name"]);
-        loginSuccess = true;
-        user.Islogined = loginSuccess;
-        localStorage.setItem("Usersdata", JSON.stringify(prasedata));
-        window.location.replace("/login");
+  const Pendinng = localStorage.getItem("Pending") || "[]";
+  const prasedata = JSON.parse(Pendinng);
+  const singupemail = document.getElementById("singup-email").value;
+  const singupapass = document.getElementById("singup-password").value;
+  let exit = false;
+  for (const users of prasedata) {
+    if (singupemail === users["Email"]) {
+      if (singupapass === users["Passkey"]) {
+        const loginuser = localStorage.getItem("Logedin") || "[]";
+        const array = JSON.parse(loginuser);
+        const user = {
+          Email: singupemail,
+          Passkey: singupapass,
+        };
+        array.push(user);
+        localStorage.setItem("Logedin", JSON.stringify(array));
+        alert("signup sucuccus now you can try logggin in ");
+        alert(
+          "Hello " +
+            user["Name"] +
+            " signup sucuccus now you can try logggin in",
+        );
+        exit = true;
         break;
+      } else {
+        alert("Incorrect password didi you changed password?");
       }
     }
-
-    if (!loginSuccess) {
-      alert("Invalid email or password!");
-    }
+  }
+  if (!exit) {
+    alert("there is no ssuch information inside");
   }
 });
+// {
+//   if (prasedata.length === 0) {
+//     alert("NO ACCOUNT INFO FOUND");
+//   } else {
+//     const useremal = document.getElementById("singup-email");
+//     const userpaskey = document.getElementById("singup-password");
+//     let Loginallowed = false;
+//     for (const user of prasedata) {
+//       // Fix: Removed the ; from the end of this line
+//       if (user.Email === useremal.value && userpaskey.value === user.Paskey) {
+//         alert("Hello " + user["Name"]);
+//         Loginallowed = true;
+//         user.Islogined = Loginallowed;
+//         localStorage.setItem("Usersdata", JSON.stringify(prasedata));
+//         window.location.replace("/login");
+//         break;
+//       }
+//     }
+
+//     if (!loginSuccess) {
+//       alert("Invalid email or password!");
+//     }
+//   }
+// }

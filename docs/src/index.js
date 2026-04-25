@@ -13,8 +13,8 @@ const errorconfirm = document.getElementById("error");
 const passwordtoggle = document.querySelectorAll(".toggle-password");
 const togreen = document.querySelectorAll(".togreen");
 const showsignup = document.getElementById("show-signup");
-const signuppage = document.getElementById("signup-form");
-const loginpage = document.getElementById("login-form");
+const signuppage = document.getElementById("signup-container");
+const loginpage = document.getElementById("login-container");
 const showlogin = document.getElementById("show-login");
 
 function updateField() {
@@ -200,26 +200,43 @@ form.addEventListener("submit", function (e) {
       : 1;
   const fullname = document.getElementById("Name").value;
   const email = document.getElementById("Signin-email").value;
-  const subfix = document.getElementById("phone").value;
   //coutycode spectial trik
   const select = document.getElementById("country-code");
+  const subfix = document.getElementById("phone").value;
   const preficx = select.options[select.selectedIndex].value;
   const phone = preficx + subfix;
-  const passsword = document.getElementById("signin-password").value;
-  //object of currunt user
-  const curruntuser = {
-    id: Uid,
-    Name: fullname,
-    Email: email,
-    Phone: phone,
-    Paskey: passsword,
-  };
-  prasedata.push(curruntuser);
-  localStorage.setItem("Usersdta", JSON.stringify(prasedata));
-  form.reset();
-  alert("Data Saved!");
+  let regstrationallowed = true;
+  for (const data of prasedata) {
+    if (data.Email === email) {
+      alert("The Email " + email + " is  already registered. Try logging in.");
+      regstrationallowed = false;
+
+      form.focus();
+      break;
+    } else if (data.Phone === phone) {
+      alert("This  number " + phone + " is already linked to an account.");
+      regstrationallowed = false;
+      form.focus();
+      break;
+    }
+  }
+  if (regstrationallowed) {
+    const passsword = document.getElementById("signin-password").value;
+    //object of currunt user
+    const curruntuser = {
+      id: Uid,
+      Name: fullname,
+      Email: email,
+      Phone: phone,
+      Paskey: passsword,
+    };
+    prasedata.push(curruntuser);
+    localStorage.setItem("Usersdta", JSON.stringify(prasedata));
+    form.reset();
+    alert("Data Saved!");
+  }
 });
-const login = document.getElementById("login-form");
+const login = document.getElementById("user-login-form");
 login.addEventListener("submit", (e) => {
   e.preventDefault();
   const Usersdata = localStorage.getItem("Usersdta") || [];
@@ -230,14 +247,16 @@ login.addEventListener("submit", (e) => {
     const useremal = document.getElementById("login-email");
     const userpaskey = document.getElementById("login-password");
     let loginSuccess = false;
+
     for (const user of prasedata) {
-      if (user.Email === useremal.value && userpaskey.value === user.Paskey);
-      {
+      // Fix: Removed the ; from the end of this line
+      if (user.Email === useremal.value && userpaskey.value === user.Paskey) {
         alert("Hello " + user["Name"]);
         loginSuccess = true;
         break;
       }
     }
+
     if (!loginSuccess) {
       alert("Invalid email or password!");
     }

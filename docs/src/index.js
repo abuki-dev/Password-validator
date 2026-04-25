@@ -254,6 +254,9 @@ login.addEventListener("submit", (e) => {
       if (user.Email === useremal.value && userpaskey.value === user.Paskey) {
         alert("Hello " + user["Name"]);
         loginSuccess = true;
+        user["Islogined"] = true;
+        localStorage.setItem("Userdata", JSON.stringify(Usersdata));
+        Window.location.replace("/login");
         break;
       }
     }

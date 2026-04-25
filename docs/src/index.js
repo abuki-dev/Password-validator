@@ -255,8 +255,8 @@ login.addEventListener("submit", (e) => {
         alert("Hello " + user["Name"]);
         loginSuccess = true;
         user["Islogined"] = true;
-        localStorage.setItem("Userdata", JSON.stringify(Usersdata));
-        Window.location.replace("/login");
+        localStorage.setItem("Usersdta", JSON.stringify(Usersdata));
+        window.location.replace("/login");
         break;
       }
     }

@@ -195,9 +195,7 @@ form.addEventListener("submit", function (e) {
   //colllecting form datas
   //idtrick
   const Uid =
-    prasedata.length > 0
-      ? Math.max(...prasedata.map((user) => user.id)) + 1
-      : 1;
+    prasedata.length > 0 ? Math.max(...prasedata.map((u) => u.id)) + 1 : 1;
   const fullname = document.getElementById("Name").value;
   const email = document.getElementById("Signin-email").value;
   //coutycode spectial trik
@@ -231,6 +229,7 @@ form.addEventListener("submit", function (e) {
       Paskey: passsword,
       Islogined: false,
     };
+
     prasedata.push(curruntuser);
     localStorage.setItem("Usersdata", JSON.stringify(prasedata));
     form.reset();
@@ -255,7 +254,7 @@ login.addEventListener("submit", (e) => {
         alert("Hello " + user["Name"]);
         loginSuccess = true;
         user.Islogined = loginSuccess;
-        localStorage.setItem("Usersdata", JSON.stringify(Usersdata));
+        localStorage.setItem("Usersdata", JSON.stringify(prasedata));
         window.location.replace("/login");
         break;
       }

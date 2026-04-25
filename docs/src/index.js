@@ -190,7 +190,7 @@ const form = document.getElementById("userForm");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   //garabig data form local storage
-  const Usersdata = localStorage.getItem("Usersdta") || "[]";
+  const Usersdata = localStorage.getItem("Usersdata") || "[]";
   const prasedata = JSON.parse(Usersdata);
   //colllecting form datas
   //idtrick
@@ -232,7 +232,7 @@ form.addEventListener("submit", function (e) {
       Islogined: false,
     };
     prasedata.push(curruntuser);
-    localStorage.setItem("Usersdta", JSON.stringify(prasedata));
+    localStorage.setItem("Usersdata", JSON.stringify(prasedata));
     form.reset();
     alert("Data Saved!");
   }
@@ -240,7 +240,7 @@ form.addEventListener("submit", function (e) {
 const login = document.getElementById("user-login-form");
 login.addEventListener("submit", (e) => {
   e.preventDefault();
-  const Usersdata = localStorage.getItem("Usersdta");
+  const Usersdata = localStorage.getItem("Usersdata");
   const prasedata = Usersdata ? JSON.parse(Usersdata) : [];
   if (prasedata.length === 0) {
     alert("NO ACCOUNT INFO FOUND");
@@ -255,7 +255,7 @@ login.addEventListener("submit", (e) => {
         alert("Hello " + user["Name"]);
         loginSuccess = true;
         user.Islogined = loginSuccess;
-        localStorage.setItem("Usersdta", JSON.stringify(Usersdata));
+        localStorage.setItem("Usersdata", JSON.stringify(Usersdata));
         window.location.replace("/login");
         break;
       }

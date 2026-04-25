@@ -239,8 +239,8 @@ form.addEventListener("submit", function (e) {
 const login = document.getElementById("user-login-form");
 login.addEventListener("submit", (e) => {
   e.preventDefault();
-  const Usersdata = localStorage.getItem("Usersdta") || [];
-  const prasedata = JSON.parse(Usersdata);
+  const Usersdata = localStorage.getItem("Usersdta");
+  const prasedata = Usersdata ? JSON.parse(Usersdata) : [];
   if (prasedata.length === 0) {
     alert("NO ACCOUNT INFO FOUND");
   } else {

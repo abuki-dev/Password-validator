@@ -284,6 +284,7 @@ signuser.addEventListener("submit", (e) => {
     signuser.reset();
   }
 });
+
 //Only for login page
 if (document.getElementById("login-page")) {
   const logingemail = document.getElementById("login-email").value;
@@ -320,6 +321,7 @@ if (document.getElementById("login-page")) {
     window.location.replace("../Users");
   }
 }
+
 //Only userpage
 if (document.getElementById("user-page")) {
   const goback = document.getElementById("back-to-home");

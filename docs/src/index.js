@@ -266,9 +266,10 @@ signuser.addEventListener("submit", (e) => {
         alert("signup sucuccus now you can try logggin in ");
         alert(
           "Hello " +
-            user["Name"] +
+            users["Name"] +
             " signup sucuccus now you can try logggin in",
         );
+        window.location.replace("../login");
         exit = true;
         break;
       } else {
@@ -294,7 +295,7 @@ signuser.addEventListener("submit", (e) => {
 //         Loginallowed = true;
 //         user.Islogined = Loginallowed;
 //         localStorage.setItem("Usersdata", JSON.stringify(prasedata));
-//         window.location.replace("/login");
+//
 //         break;
 //       }
 //     }

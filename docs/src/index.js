@@ -185,6 +185,21 @@ showlogin.addEventListener("click", () => {
   signuppage.classList.add("hidden");
   loginpage.classList.remove("hidden");
 });
+function LoginAllow(users, PendingArray) {
+  const loginuser = localStorage.getItem("Logedin") || "[]";
+  const array = JSON.parse(loginuser);
+  const user = {
+    Email: singupemail,
+    Passkey: singupapass,
+  };
+  array.push(user);
+  localStorage.setItem("Logedin", JSON.stringify(array));
+  alert("account activated");
+  let toberemoved = PendingArray.indexOf(users);
+  PendingArray.splice(toberemoved, 1);
+  localStorage.setItem("Pending", JSON.stringify(PendingArray));
+  window.location.replace("../login");
+}
 const form = document.getElementById("userForm");
 
 form.addEventListener("submit", function (e) {
@@ -255,51 +270,60 @@ signuser.addEventListener("submit", (e) => {
   for (const users of prasedata) {
     if (singupemail === users["Email"]) {
       if (singupapass === users["Passkey"]) {
-        const loginuser = localStorage.getItem("Logedin") || "[]";
-        const array = JSON.parse(loginuser);
-        const user = {
-          Email: singupemail,
-          Passkey: singupapass,
-        };
-        array.push(user);
-        localStorage.setItem("Logedin", JSON.stringify(array));
-        alert("signup sucuccus now you can try logggin in ");
-        let toberemoved = prasedata.indexOf(users);
-        prasedata.splice(toberemoved, 1);
-        localStorage.setItem("Pending", JSON.stringify(prasedata));
-        window.location.replace("../login");
+        LoginAllow(users, prasedata);
         exit = true;
         break;
       } else {
-        alert("Incorrect password didi you changed password?");
+        alert("Incorrect password did  you changed password?");
+        signuser.focus();
       }
     }
   }
   if (!exit) {
-    alert("there is  such  information sinside here");
+    alert("No account information pleas create acount first");
+    signuser.reset();
   }
 });
-// {
-//   if (prasedata.length === 0) {
-//     alert("NO ACCOUNT INFO FOUND");
-//   } else {
-//     const useremal = document.getElementById("singup-email");
-//     const userpaskey = document.getElementById("singup-password");
-//     let Loginallowed = false;
-//     for (const user of prasedata) {
-//       // Fix: Removed the ; from the end of this line
-//       if (user.Email === useremal.value && userpaskey.value === user.Paskey) {
-//         alert("Hello " + user["Name"]);
-//         Loginallowed = true;
-//         user.Islogined = Loginallowed;
-//         localStorage.setItem("Usersdata", JSON.stringify(prasedata));
-//
-//         break;
-//       }
-//     }
+//Only for login page
+if (document.getElementById("login-page")) {
+  const logingemail = document.getElementById("login-email").value;
+  const loginpasword = document.getElementById("login-email").value;
+  const login = document.getElementById("login-form");
 
-//     if (!loginSuccess) {
-//       alert("Invalid email or password!");
-//     }
-//   }
-// }
+  function trylogin(loginform) {
+    let exit = false;
+    const logdata = localStorage.getItem("Logedin") || "[]";
+    if (logdata.length === 0) {
+      alert("pleas create account first");
+    } else {
+      const users = JSON.parse(logdata);
+      for (const user of users) {
+        if (user.Email === logingemail) {
+          if (user.Passkey === loginpasword) {
+            gotouserpage();
+            exit = true;
+          } else {
+            alert("password incorrct");
+            loginform.focus();
+          }
+        }
+      }
+    }
+    if (!exit) {
+      alert("No acount information create account first");
+    }
+  }
+  login.addEventListener("submit", () => {
+    trylogin(login);
+  });
+  function gotouserpage() {
+    window.location.replace("../Users");
+  }
+}
+//Only userpage
+if (document.getElementById("user-page")) {
+  const goback = document.getElementById("back-to-home");
+  goback.addEventListener("click", () => {
+    window.location.replace("../login");
+  });
+}

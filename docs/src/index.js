@@ -264,11 +264,9 @@ signuser.addEventListener("submit", (e) => {
         array.push(user);
         localStorage.setItem("Logedin", JSON.stringify(array));
         alert("signup sucuccus now you can try logggin in ");
-        alert(
-          "Hello " +
-            users["Name"] +
-            " signup sucuccus now you can try logggin in",
-        );
+        let toberemoved = prasedata.indexOf(users);
+        prasedata.splice(toberemoved, 1);
+        localStorage.setItem("Pending", JSON.stringify(prasedata));
         window.location.replace("../login");
         exit = true;
         break;
@@ -278,7 +276,7 @@ signuser.addEventListener("submit", (e) => {
     }
   }
   if (!exit) {
-    alert("there is no ssuch information inside");
+    alert("there is  such  information sinside here");
   }
 });
 // {

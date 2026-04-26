@@ -189,8 +189,8 @@ function LoginAllow(users, PendingArray) {
   const loginuser = localStorage.getItem("Logedin") || "[]";
   const array = JSON.parse(loginuser);
   const user = {
-    Email: singupemail,
-    Passkey: singupapass,
+    Email: users["Email"],
+    Passkey: users["Passkey"],
   };
   array.push(user);
   localStorage.setItem("Logedin", JSON.stringify(array));

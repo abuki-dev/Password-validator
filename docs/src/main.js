@@ -294,7 +294,7 @@ if (document.getElementById("login-page")) {
   const loginpasword = document.getElementById("login-password").value;
   const login = document.getElementById("login-form");
 
-  function trylogin(loginform) {
+  function trylogin() {
     let exit = false;
     const logdata = localStorage.getItem("Logedin") || "[]";
     if (logdata.length === 0) {
@@ -302,13 +302,13 @@ if (document.getElementById("login-page")) {
     } else {
       const users = JSON.parse(logdata);
       for (const user of users) {
-        if (user.Email === logingemail) {
-          if (user.Passkey === loginpasword) {
+        if (user["Email"] === logingemail) {
+          if (user["Passkey"] === loginpasword) {
             gotouserpage();
             exit = true;
           } else {
             alert("password incorrct");
-            loginform.focus();
+            login.focus();
           }
         }
       }

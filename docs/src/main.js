@@ -317,8 +317,9 @@ if (document.getElementById("login-page")) {
       alert("No acount information create account first");
     }
   }
-  login.addEventListener("submit", () => {
-    trylogin(login);
+  login.addEventListener("submit", (e) => {
+    e.preventDefault();
+    trylogin();
   });
   function gotouserpage() {
     window.location.replace("../Users");

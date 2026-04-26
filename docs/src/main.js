@@ -290,12 +290,12 @@ if (document.getElementById("login-container")) {
 }
 //Only for login page
 if (document.getElementById("login-page")) {
-  const logingemail = document.getElementById("login-email").value;
-  const loginpasword = document.getElementById("login-password").value;
   const login = document.getElementById("login-form");
 
   function trylogin() {
     let exit = false;
+    const logingemail = document.getElementById("login-email").value;
+    const loginpasword = document.getElementById("login-password").value;
     const logdata = localStorage.getItem("Logedin") || "[]";
     if (logdata.length === 0) {
       alert("pleas create account first");
@@ -304,7 +304,7 @@ if (document.getElementById("login-page")) {
       for (const user of users) {
         if (user["Email"] === logingemail) {
           if (user["Passkey"] === loginpasword) {
-            gotouserpage();
+            window.location.replace("../Users");
             exit = true;
           } else {
             alert("password incorrct");
@@ -321,9 +321,6 @@ if (document.getElementById("login-page")) {
     e.preventDefault();
     trylogin();
   });
-  function gotouserpage() {
-    window.location.replace("../Users");
-  }
   function togglePassword() {
     const passwordInput = document.getElementById("login-password");
     const eyeIcon = document.getElementById("eye-icon");

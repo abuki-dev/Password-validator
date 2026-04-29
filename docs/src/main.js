@@ -249,12 +249,12 @@ if (document.getElementById("login-container")) {
 
       prasedata.push(curruntuser);
       localStorage.setItem("Usersdata", JSON.stringify(prasedata));
-      const Pendinng = localStorage.getItem("Pending") || "[]";
-      const PendigArray = JSON.parse(Pendinng);
+      const Accounts = localStorage.getItem("Accounts") || "[]";
+      const PendigArray = JSON.parse(Accounts);
       const user = {
         Email: email,
         Passkey: passsword,
-        Status: "pending",
+        Status: "created",
       };
       PendigArray.push(user);
       localStorage.setItem("Pending", JSON.stringify(PendigArray));

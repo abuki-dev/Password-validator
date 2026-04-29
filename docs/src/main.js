@@ -244,9 +244,18 @@ if (document.getElementById("login-container")) {
       PendigArray.push(user);
       localStorage.setItem("Pending", JSON.stringify(PendigArray));
       form.reset();
-      alert("account created sing up to activate it ");
+      // add teh message ofactivetion
+      Showactivationmessage();
     }
   });
+  function Showactivationmessage() {
+    message = document.getElementById("success-msg");
+    message.classList.remove("hidden");
+    setTimeout(() => {
+      message.classList.add("hidden");
+      showlogin.click();
+    }, 5000);
+  }
   const signuser = document.getElementById("user-login-form");
   signuser.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -254,10 +263,11 @@ if (document.getElementById("login-container")) {
     const prasedata = JSON.parse(Pendinng);
     const singupemail = document.getElementById("singup-email").value;
     const singupapass = document.getElementById("singup-password").value;
-    let sugnin = false;
+    let signin = false;
     for (const users of prasedata) {
       if (singupemail === users["Email"]) {
         if (singupapass === users["Passkey"]) {
+          signuser.reset();
           window.location.replace("../Dashboard");
           signin = true;
           break;
@@ -267,7 +277,7 @@ if (document.getElementById("login-container")) {
         }
       }
     }
-    if (!exit) {
+    if (!signin) {
       alert("No account information pleas create acount first");
       signuser.reset();
     }

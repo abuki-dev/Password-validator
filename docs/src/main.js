@@ -186,21 +186,6 @@ if (document.getElementById("login-container")) {
     signuppage.classList.add("hidden");
     loginpage.classList.remove("hidden");
   });
-  function LoginAllow(users, PendingArray) {
-    const loginuser = localStorage.getItem("Logedin") || "[]";
-    const array = JSON.parse(loginuser);
-    const user = {
-      Email: users["Email"],
-      Passkey: users["Passkey"],
-    };
-    array.push(user);
-    localStorage.setItem("Logedin", JSON.stringify(array));
-    alert("account activated");
-    let toberemoved = PendingArray.indexOf(users);
-    PendingArray.splice(toberemoved, 1);
-    localStorage.setItem("Pending", JSON.stringify(PendingArray));
-    window.location.replace("../Dashboard");
-  }
   const form = document.getElementById("userForm");
 
   form.addEventListener("submit", function (e) {
@@ -249,12 +234,12 @@ if (document.getElementById("login-container")) {
 
       prasedata.push(curruntuser);
       localStorage.setItem("Usersdata", JSON.stringify(prasedata));
-      const Pendinng = localStorage.getItem("Pending") || "[]";
+      const Pendinng = localStorage.getItem("Active-Accounts") || "[]";
       const PendigArray = JSON.parse(Pendinng);
       const user = {
         Email: email,
         Passkey: passsword,
-        Status: "pending",
+        Status: "Regitestered",
       };
       PendigArray.push(user);
       localStorage.setItem("Pending", JSON.stringify(PendigArray));
@@ -269,12 +254,12 @@ if (document.getElementById("login-container")) {
     const prasedata = JSON.parse(Pendinng);
     const singupemail = document.getElementById("singup-email").value;
     const singupapass = document.getElementById("singup-password").value;
-    let exit = false;
+    let sugnin = false;
     for (const users of prasedata) {
       if (singupemail === users["Email"]) {
         if (singupapass === users["Passkey"]) {
-          LoginAllow(users, prasedata);
-          exit = true;
+          window.location.replace("../Dashboard");
+          signin = true;
           break;
         } else {
           alert("Incorrect password did  you changed password?");

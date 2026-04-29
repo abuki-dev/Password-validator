@@ -1,0 +1,1369 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BK-TECH Academy - Dashboard</title>
+    <link rel="stylesheet" href="../src/output.css" />
+    <link type="icon" href="../assets/icon.png" />
+  </head>
+  <body>
+    <div id="root">
+      <div class="applicant-dashboard dark-mode">
+        <div class="sidebar">
+          <div class="sidebar-header">
+            <div class="logo-area">
+              <div class="logo-icon">
+                <img
+                  src="../assets/icon.png"
+                  alt="App Factory Academy"
+                  class="dashboard-logo"
+                />
+              </div>
+              <span class="logo-text">Applicant Portal</span>
+            </div>
+            <button class="sidebar-toggle" aria-label="Toggle sidebar">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+          </div>
+          <div class="sidebar-nav">
+            <div class="nav-category">
+              <div class="category-header">
+                <span class="category-icon"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                    <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                    <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                    <rect
+                      x="3"
+                      y="16"
+                      width="7"
+                      height="5"
+                      rx="1"
+                    ></rect></svg></span
+                ><span class="category-name">Overview</span>
+              </div>
+              <div class="category-tabs">
+                <button class="nav-tab active" title="">
+                  <span class="tab-icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="3" width="7" height="9" rx="1"></rect>
+                      <rect x="14" y="3" width="7" height="5" rx="1"></rect>
+                      <rect x="14" y="12" width="7" height="9" rx="1"></rect>
+                      <rect
+                        x="3"
+                        y="16"
+                        width="7"
+                        height="5"
+                        rx="1"
+                      ></rect></svg></span
+                  ><span class="tab-label">Dashboard</span>
+                </button>
+              </div>
+            </div>
+            <div class="nav-category">
+              <div class="category-header">
+                <span class="category-icon"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    ></circle>
+                    <path
+                      d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    ></path>
+                    <line
+                      x1="12"
+                      y1="17"
+                      x2="12.01"
+                      y2="17"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    ></line></svg></span
+                ><span class="category-name">Help &amp; Resources</span>
+              </div>
+              <div class="category-tabs">
+                <button class="nav-tab" title="">
+                  <span class="tab-icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M8 7h4M8 11h2"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                      ></path></svg></span
+                  ><span class="tab-label">How to Apply</span></button
+                ><button class="nav-tab" title="">
+                  <span class="tab-icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        fill="none"
+                      ></path>
+                      <circle
+                        cx="12"
+                        cy="10"
+                        r="1"
+                        fill="currentColor"
+                      ></circle>
+                      <circle
+                        cx="16"
+                        cy="10"
+                        r="1"
+                        fill="currentColor"
+                      ></circle>
+                      <circle
+                        cx="8"
+                        cy="10"
+                        r="1"
+                        fill="currentColor"
+                      ></circle></svg></span
+                  ><span class="tab-label">FAQ</span></button
+                ><button class="nav-tab" title="">
+                  <span class="tab-icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M3 18v-6a9 9 0 0 1 18 0v6"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        fill="none"
+                      ></path>
+                      <path
+                        d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        fill="none"
+                      ></path></svg></span
+                  ><span class="tab-label">Contact Support</span>
+                </button>
+              </div>
+            </div>
+            <div class="nav-category">
+              <div class="category-header">
+                <span class="category-icon"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle></svg></span
+                ><span class="category-name">Personal</span>
+              </div>
+              <div class="category-tabs">
+                <button class="nav-tab" title="">
+                  <span class="tab-icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                      ></path>
+                      <circle cx="12" cy="7" r="4"></circle></svg></span
+                  ><span class="tab-label">My Profile</span></button
+                ><button class="nav-tab" title="">
+                  <span class="tab-icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                      ></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line></svg></span
+                  ><span class="tab-label">Documents</span>
+                </button>
+              </div>
+            </div>
+            <div class="nav-category">
+              <div class="category-header">
+                <span class="category-icon"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline
+                      points="22 4 12 14.01 9 11.01"
+                    ></polyline></svg></span
+                ><span class="category-name">Application</span>
+              </div>
+              <div class="category-tabs">
+                <button class="nav-tab" title="">
+                  <span class="tab-icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline
+                        points="22 4 12 14.01 9 11.01"
+                      ></polyline></svg></span
+                  ><span class="tab-label">My Application</span></button
+                ><button class="nav-tab" title="">
+                  <span class="tab-icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <polyline
+                        points="12 6 12 12 16 14"
+                      ></polyline></svg></span
+                  ><span class="tab-label">Application Journey</span>
+                </button>
+              </div>
+            </div>
+            <div class="nav-category">
+              <div class="category-header">
+                <span class="category-icon"
+                  ><svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span
+                ><span class="category-name">Trainee</span>
+              </div>
+              <div class="category-tabs">
+                <button class="nav-tab" title="">
+                  <span class="tab-icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <polygon
+                        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                      ></polygon></svg></span
+                  ><span class="tab-label">Submit Feedback</span></button
+                ><button class="nav-tab" title="">
+                  <span class="tab-icon"
+                    ><svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                      ></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line></svg></span
+                  ><span class="tab-label">My Feedback</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-footer">
+            <button class="theme-toggle">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg
+              ><span>Light Mode</span>
+            </button>
+          </div>
+        </div>
+        <div class="main-content">
+          <header class="main-header">
+            <div class="header-left">
+              <button class="mobile-menu-btn" aria-label="Menu">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+              </button>
+              <h1 class="page-title">Dashboard</h1>
+            </div>
+            <div class="header-right">
+              <div class="date-display">Wed, Apr 29</div>
+              <div class="notifications-wrapper">
+                <button class="notifications-btn" aria-label="Notifications">
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"
+                    ></path>
+                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                  </svg>
+                </button>
+              </div>
+              <div class="profile-wrapper">
+                <button class="profile-btn" aria-label="Profile">
+                  <div class="user-avatar-small">A</div>
+                  <span class="user-name-header">Abubeker</span
+                  ><span class="dropdown-arrow">▼</span>
+                </button>
+              </div>
+            </div>
+          </header>
+          <main class="main-content-area">
+            <div class="overview-container">
+              <div
+                class="welcome-banner"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(59, 130, 246, 0.125),
+                    rgba(59, 130, 246, 0.063)
+                  );
+                "
+              >
+                <div class="welcome-content">
+                  <h2>Welcome back, Abubeker!</h2>
+                  <p class="welcome-message">
+                    📝 Your application is under review. Our team is evaluating
+                    your submission. You'll be notified when there's an update.
+                  </p>
+                </div>
+                <div
+                  class="status-badge-large"
+                  style="background-color: rgb(59, 130, 246)"
+                >
+                  Registration Complete
+                </div>
+              </div>
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <div class="stat-icon">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M21 12a9 9 0 1 1-9-9"></path>
+                      <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                  </div>
+                  <div class="stat-info">
+                    <div class="stat-value">30%</div>
+                    <div class="stat-label">Application Progress</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                      ></path>
+                      <polyline points="14 2 14 8 20 8"></polyline>
+                      <line x1="16" y1="13" x2="8" y2="13"></line>
+                      <line x1="16" y1="17" x2="8" y2="17"></line>
+                    </svg>
+                  </div>
+                  <div class="stat-info">
+                    <div class="stat-value">8/5</div>
+                    <div class="stat-label">Documents</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"
+                      ></path>
+                      <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                  </div>
+                  <div class="stat-info">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Notifications</div>
+                  </div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-icon">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect
+                        x="3"
+                        y="4"
+                        width="18"
+                        height="18"
+                        rx="2"
+                        ry="2"
+                      ></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                  </div>
+                  <div class="stat-info">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Upcoming Events</div>
+                  </div>
+                </div>
+              </div>
+              <div class="progress-section">
+                <div class="section-header">
+                  <h3>Application Progress</h3>
+                  <span class="step-info">Step 6 of 20</span>
+                </div>
+                <div class="progress-bar-container">
+                  <div class="progress-bar-fill" style="width: 30%"></div>
+                </div>
+              </div>
+              <div class="two-column-layout">
+                <div class="timeline-card">
+                  <h3>Application Timeline</h3>
+                  <div
+                    style="
+                      background: white;
+                      border-radius: 12px;
+                      padding: 1.5rem;
+                      border: 1px solid rgb(229, 231, 235);
+                    "
+                  >
+                    <h3 style="margin: 0px 0px 1rem">
+                      ⏱️ My Application Journey
+                    </h3>
+                    <div style="margin-bottom: 2rem">
+                      <div
+                        style="
+                          display: flex;
+                          justify-content: space-between;
+                          margin-bottom: 0.5rem;
+                        "
+                      >
+                        <span>Application Progress</span><span>30%</span>
+                      </div>
+                      <div
+                        style="
+                          height: 8px;
+                          background: rgb(226, 232, 240);
+                          border-radius: 4px;
+                          overflow: hidden;
+                        "
+                      >
+                        <div
+                          style="
+                            width: 30%;
+                            height: 100%;
+                            background: rgb(34, 197, 94);
+                            transition: width 0.3s;
+                          "
+                        ></div>
+                      </div>
+                    </div>
+                    <div style="position: relative; padding-left: 2rem">
+                      <div
+                        style="
+                          position: absolute;
+                          left: 8px;
+                          top: 0px;
+                          bottom: 0px;
+                          width: 2px;
+                          background: rgb(226, 232, 240);
+                        "
+                      ></div>
+                      <div
+                        style="
+                          position: relative;
+                          margin-bottom: 1.5rem;
+                          opacity: 1;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: -2rem;
+                            top: 0px;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: rgb(34, 197, 94);
+                            border-width: medium;
+                            border-style: none;
+                            border-color: currentcolor;
+                            border-image: initial;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 1;
+                          "
+                        >
+                          <span style="font-size: 12px; color: white">✓</span>
+                        </div>
+                        <div
+                          style="
+                            margin-left: 1rem;
+                            padding: 0.75rem 1rem;
+                            background: rgb(248, 250, 252);
+                            border-radius: 12px;
+                            border: 1px solid rgb(226, 232, 240);
+                          "
+                        >
+                          <div
+                            style="
+                              display: flex;
+                              align-items: center;
+                              gap: 0.75rem;
+                              flex-wrap: wrap;
+                            "
+                          >
+                            <span style="font-size: 1.2rem">📝</span>
+                            <h4 style="margin: 0px; color: rgb(34, 197, 94)">
+                              Application Submitted
+                            </h4>
+                          </div>
+                          <p
+                            style="
+                              margin: 0.5rem 0px 0px;
+                              font-size: 0.85rem;
+                              color: rgb(100, 116, 139);
+                            "
+                          >
+                            Your application has been received
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          position: relative;
+                          margin-bottom: 1.5rem;
+                          opacity: 1;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: -2rem;
+                            top: 0px;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: rgb(34, 197, 94);
+                            border-width: medium;
+                            border-style: none;
+                            border-color: currentcolor;
+                            border-image: initial;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 1;
+                          "
+                        >
+                          <span style="font-size: 12px; color: white">✓</span>
+                        </div>
+                        <div
+                          style="
+                            margin-left: 1rem;
+                            padding: 0.75rem 1rem;
+                            background: rgb(248, 250, 252);
+                            border-radius: 12px;
+                            border: 1px solid rgb(226, 232, 240);
+                          "
+                        >
+                          <div
+                            style="
+                              display: flex;
+                              align-items: center;
+                              gap: 0.75rem;
+                              flex-wrap: wrap;
+                            "
+                          >
+                            <span style="font-size: 1.2rem">⏳</span>
+                            <h4 style="margin: 0px; color: rgb(34, 197, 94)">
+                              Pending Approval
+                            </h4>
+                          </div>
+                          <p
+                            style="
+                              margin: 0.5rem 0px 0px;
+                              font-size: 0.85rem;
+                              color: rgb(100, 116, 139);
+                            "
+                          >
+                            Admin is reviewing your application
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          position: relative;
+                          margin-bottom: 1.5rem;
+                          opacity: 1;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: -2rem;
+                            top: 0px;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: rgb(34, 197, 94);
+                            border-width: medium;
+                            border-style: none;
+                            border-color: currentcolor;
+                            border-image: initial;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 1;
+                          "
+                        >
+                          <span style="font-size: 12px; color: white">✓</span>
+                        </div>
+                        <div
+                          style="
+                            margin-left: 1rem;
+                            padding: 0.75rem 1rem;
+                            background: rgb(248, 250, 252);
+                            border-radius: 12px;
+                            border: 1px solid rgb(226, 232, 240);
+                          "
+                        >
+                          <div
+                            style="
+                              display: flex;
+                              align-items: center;
+                              gap: 0.75rem;
+                              flex-wrap: wrap;
+                            "
+                          >
+                            <span style="font-size: 1.2rem">✅</span>
+                            <h4 style="margin: 0px; color: rgb(34, 197, 94)">
+                              Account Approved
+                            </h4>
+                          </div>
+                          <p
+                            style="
+                              margin: 0.5rem 0px 0px;
+                              font-size: 0.85rem;
+                              color: rgb(100, 116, 139);
+                            "
+                          >
+                            Your account has been approved
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          position: relative;
+                          margin-bottom: 1.5rem;
+                          opacity: 1;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: -2rem;
+                            top: 0px;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: rgb(34, 197, 94);
+                            border-width: medium;
+                            border-style: none;
+                            border-color: currentcolor;
+                            border-image: initial;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 1;
+                          "
+                        >
+                          <span style="font-size: 12px; color: white">✓</span>
+                        </div>
+                        <div
+                          style="
+                            margin-left: 1rem;
+                            padding: 0.75rem 1rem;
+                            background: rgb(248, 250, 252);
+                            border-radius: 12px;
+                            border: 1px solid rgb(226, 232, 240);
+                          "
+                        >
+                          <div
+                            style="
+                              display: flex;
+                              align-items: center;
+                              gap: 0.75rem;
+                              flex-wrap: wrap;
+                            "
+                          >
+                            <span style="font-size: 1.2rem">📋</span>
+                            <h4 style="margin: 0px; color: rgb(34, 197, 94)">
+                              Registration Started
+                            </h4>
+                          </div>
+                          <p
+                            style="
+                              margin: 0.5rem 0px 0px;
+                              font-size: 0.85rem;
+                              color: rgb(100, 116, 139);
+                            "
+                          >
+                            Please complete your registration
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          position: relative;
+                          margin-bottom: 1.5rem;
+                          opacity: 1;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: -2rem;
+                            top: 0px;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: rgb(34, 197, 94);
+                            border-width: medium;
+                            border-style: none;
+                            border-color: currentcolor;
+                            border-image: initial;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 1;
+                          "
+                        >
+                          <span style="font-size: 12px; color: white">✓</span>
+                        </div>
+                        <div
+                          style="
+                            margin-left: 1rem;
+                            padding: 0.75rem 1rem;
+                            background: rgb(248, 250, 252);
+                            border-radius: 12px;
+                            border: 1px solid rgb(226, 232, 240);
+                          "
+                        >
+                          <div
+                            style="
+                              display: flex;
+                              align-items: center;
+                              gap: 0.75rem;
+                              flex-wrap: wrap;
+                            "
+                          >
+                            <span style="font-size: 1.2rem">📁</span>
+                            <h4 style="margin: 0px; color: rgb(34, 197, 94)">
+                              Documents Uploaded
+                            </h4>
+                          </div>
+                          <p
+                            style="
+                              margin: 0.5rem 0px 0px;
+                              font-size: 0.85rem;
+                              color: rgb(100, 116, 139);
+                            "
+                          >
+                            Your documents are uploaded
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          position: relative;
+                          margin-bottom: 1.5rem;
+                          opacity: 1;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: -2rem;
+                            top: 0px;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: rgb(59, 130, 246);
+                            border: 3px solid rgb(147, 197, 253);
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 1;
+                          "
+                        >
+                          <div
+                            style="
+                              width: 10px;
+                              height: 10px;
+                              background: white;
+                              border-radius: 50%;
+                            "
+                          ></div>
+                        </div>
+                        <div
+                          style="
+                            margin-left: 1rem;
+                            padding: 0.75rem 1rem;
+                            background: rgb(239, 246, 255);
+                            border-radius: 12px;
+                            border: 1px solid rgb(59, 130, 246);
+                          "
+                        >
+                          <div
+                            style="
+                              display: flex;
+                              align-items: center;
+                              gap: 0.75rem;
+                              flex-wrap: wrap;
+                            "
+                          >
+                            <span style="font-size: 1.2rem">📤</span>
+                            <h4 style="margin: 0px; color: rgb(59, 130, 246)">
+                              Registration Complete
+                            </h4>
+                            <span
+                              style="
+                                font-size: 0.7rem;
+                                background: rgb(59, 130, 246);
+                                color: white;
+                                padding: 2px 8px;
+                                border-radius: 20px;
+                              "
+                              >Current</span
+                            >
+                          </div>
+                          <p
+                            style="
+                              margin: 0.5rem 0px 0px;
+                              font-size: 0.85rem;
+                              color: rgb(100, 116, 139);
+                            "
+                          >
+                            Registration submitted for review
+                          </p>
+                          <div style="margin-top: 0.75rem"></div>
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          position: relative;
+                          margin-bottom: 1.5rem;
+                          opacity: 0.7;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: -2rem;
+                            top: 0px;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: rgb(226, 232, 240);
+                            border-width: medium;
+                            border-style: none;
+                            border-color: currentcolor;
+                            border-image: initial;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 1;
+                          "
+                        ></div>
+                        <div
+                          style="
+                            margin-left: 1rem;
+                            padding: 0.75rem 1rem;
+                            background: rgb(248, 250, 252);
+                            border-radius: 12px;
+                            border: 1px solid rgb(226, 232, 240);
+                          "
+                        >
+                          <div
+                            style="
+                              display: flex;
+                              align-items: center;
+                              gap: 0.75rem;
+                              flex-wrap: wrap;
+                            "
+                          >
+                            <span style="font-size: 1.2rem">🔍</span>
+                            <h4 style="margin: 0px; color: rgb(31, 41, 55)">
+                              Under Review
+                            </h4>
+                          </div>
+                          <p
+                            style="
+                              margin: 0.5rem 0px 0px;
+                              font-size: 0.85rem;
+                              color: rgb(100, 116, 139);
+                            "
+                          >
+                            Committee is reviewing your application
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          position: relative;
+                          margin-bottom: 1.5rem;
+                          opacity: 0.7;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: -2rem;
+                            top: 0px;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: rgb(226, 232, 240);
+                            border-width: medium;
+                            border-style: none;
+                            border-color: currentcolor;
+                            border-image: initial;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 1;
+                          "
+                        ></div>
+                        <div
+                          style="
+                            margin-left: 1rem;
+                            padding: 0.75rem 1rem;
+                            background: rgb(248, 250, 252);
+                            border-radius: 12px;
+                            border: 1px solid rgb(226, 232, 240);
+                          "
+                        >
+                          <div
+                            style="
+                              display: flex;
+                              align-items: center;
+                              gap: 0.75rem;
+                              flex-wrap: wrap;
+                            "
+                          >
+                            <span style="font-size: 1.2rem">⭐</span>
+                            <h4 style="margin: 0px; color: rgb(31, 41, 55)">
+                              Shortlisted
+                            </h4>
+                          </div>
+                          <p
+                            style="
+                              margin: 0.5rem 0px 0px;
+                              font-size: 0.85rem;
+                              color: rgb(100, 116, 139);
+                            "
+                          >
+                            You have been shortlisted
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          position: relative;
+                          margin-bottom: 1.5rem;
+                          opacity: 0.7;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: -2rem;
+                            top: 0px;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: rgb(226, 232, 240);
+                            border-width: medium;
+                            border-style: none;
+                            border-color: currentcolor;
+                            border-image: initial;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 1;
+                          "
+                        ></div>
+                        <div
+                          style="
+                            margin-left: 1rem;
+                            padding: 0.75rem 1rem;
+                            background: rgb(248, 250, 252);
+                            border-radius: 12px;
+                            border: 1px solid rgb(226, 232, 240);
+                          "
+                        >
+                          <div
+                            style="
+                              display: flex;
+                              align-items: center;
+                              gap: 0.75rem;
+                              flex-wrap: wrap;
+                            "
+                          >
+                            <span style="font-size: 1.2rem">📝</span>
+                            <h4 style="margin: 0px; color: rgb(31, 41, 55)">
+                              Exam Scheduled
+                            </h4>
+                          </div>
+                          <p
+                            style="
+                              margin: 0.5rem 0px 0px;
+                              font-size: 0.85rem;
+                              color: rgb(100, 116, 139);
+                            "
+                          >
+                            Your exam date has been set
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          position: relative;
+                          margin-bottom: 1.5rem;
+                          opacity: 0.7;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: -2rem;
+                            top: 0px;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: rgb(226, 232, 240);
+                            border-width: medium;
+                            border-style: none;
+                            border-color: currentcolor;
+                            border-image: initial;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 1;
+                          "
+                        ></div>
+                        <div
+                          style="
+                            margin-left: 1rem;
+                            padding: 0.75rem 1rem;
+                            background: rgb(248, 250, 252);
+                            border-radius: 12px;
+                            border: 1px solid rgb(226, 232, 240);
+                          "
+                        >
+                          <div
+                            style="
+                              display: flex;
+                              align-items: center;
+                              gap: 0.75rem;
+                              flex-wrap: wrap;
+                            "
+                          >
+                            <span style="font-size: 1.2rem">✅</span>
+                            <h4 style="margin: 0px; color: rgb(31, 41, 55)">
+                              Exam Completed
+                            </h4>
+                          </div>
+                          <p
+                            style="
+                              margin: 0.5rem 0px 0px;
+                              font-size: 0.85rem;
+                              color: rgb(100, 116, 139);
+                            "
+                          >
+                            You have completed the exam
+                          </p>
+                        </div>
+                      </div>
+                      <div
+                        style="
+                          position: relative;
+                          margin-bottom: 1.5rem;
+                          opacity: 0.7;
+                        "
+                      >
+                        <div
+                          style="
+                            position: absolute;
+                            left: -2rem;
+                            top: 0px;
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            background: rgb(226, 232, 240);
+                            border-width: medium;
+                            border-style: none;
+                            border-color: currentcolor;
+                            border-image: initial;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            z-index: 1;
+                          "
+                        ></div>
+                        <div
+                          style="
+                            margin-left: 1rem;
+                            padding: 0.75rem 1rem;
+                            background: rgb(248, 250, 252);
+                            border-radius: 12px;
+                            border: 1px solid rgb(226, 232, 240);
+                          "
+                        >
+                          <div
+                            style="
+                              display: flex;
+                              align-items: center;
+                              gap: 0.75rem;
+                              flex-wrap: wrap;
+                            "
+                          >
+                            <span style="font-size: 1.2rem">🎤</span>
+                            <h4 style="margin: 0px; color: rgb(31, 41, 55)">
+                              Interview Scheduled
+                            </h4>
+                          </div>
+                          <p
+                            style="
+                              margin: 0.5rem 0px 0px;
+                              font-size: 0.85rem;
+                              color: rgb(100, 116, 139);
+                            "
+                          >
+                            Your interview date has been set
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      style="
+                        margin-top: 2rem;
+                        padding: 1rem 1.5rem;
+                        background: rgb(240, 249, 255);
+                        border-radius: 12px;
+                        border-left: 4px solid rgb(59, 130, 246);
+                      "
+                    >
+                      <h4
+                        style="margin: 0px 0px 0.5rem; color: rgb(31, 41, 55)"
+                      >
+                        📌 Current Status
+                      </h4>
+                      <p
+                        style="
+                          margin: 0px;
+                          color: rgb(75, 85, 99);
+                          font-size: 0.95rem;
+                        "
+                      >
+                        Your registration is complete. The committee will review
+                        your application.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="right-column">
+                  <div class="info-card">
+                    <h3>Upcoming Events</h3>
+                    <div class="empty-state-small">No upcoming events</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
+          <footer class="main-footer">
+            <span
+              >© 2026 App Factory Academy, Wollo University. All rights
+              reserved.</span
+            >
+            <div class="footer-stats">
+              <span>Application ID: #22</span
+              ><span>Status: Registration Complete</span
+              ><span
+                >AFTIS: 1.1.0, Developer:
+                <a
+                  href="https://orcid.org/0000-0001-8144-1315"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="ORCID Profile"
+                  style="display: inline-flex; align-items: center; gap: 6px"
+                  ><img
+                    src="/icons/orcid.svg"
+                    alt="ORCID"
+                    style="width: 18px; height: 12px"
+                  />ORCID</a
+                ></span
+              >
+            </div>
+          </footer>
+        </div>
+        <input
+          id="file-input-trigger"
+          type="file"
+          accept=".pdf,.jpg,.jpeg,.png,.doc,.docx"
+          style="display: none"
+        />
+      </div>
+    </div>
+  </body>
+</html>

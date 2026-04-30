@@ -281,10 +281,12 @@ if (document.getElementById("login-container")) {
 if (document.getElementById("root")) {
   const prifilename = document.getElementsByClassName("user-name-header");
   const welcome = document.getElementById("user-welcome");
+  const avatar = document.getElementsByClassName("user-avatar-small");
   function fetchdata() {
     const Currentuser = localStorage.getItem("Currentuser");
     const Userdata = JSON.parse(Currentuser);
-    prifilename.textContent = Userdata["Name"];
-    welcome.textContent = Userdata["Name"];
+    const Av = (prifilename[0].textContent = Userdata["Name"]);
+    avatar[0].textContent = Av[0];
+    welcome.textContent = "Welcomeback ," + Userdata["Name"];
   }
 }

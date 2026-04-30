@@ -234,15 +234,6 @@ if (document.getElementById("login-container")) {
 
       prasedata.push(curruntuser);
       localStorage.setItem("Usersdata", JSON.stringify(prasedata));
-      const Pendinng = localStorage.getItem("Active-Accounts") || "[]";
-      const PendigArray = JSON.parse(Pendinng);
-      const user = {
-        Email: email,
-        Passkey: passsword,
-        Status: "Regitestered",
-      };
-      PendigArray.push(user);
-      localStorage.setItem("Pending", JSON.stringify(PendigArray));
       form.reset();
       // add teh message ofactivetion
       Showactivationmessage();
@@ -259,21 +250,24 @@ if (document.getElementById("login-container")) {
   const signuser = document.getElementById("user-login-form");
   signuser.addEventListener("submit", (e) => {
     e.preventDefault();
-    const Pendinng = localStorage.getItem("Pending") || "[]";
+    const Pendinng = localStorage.getItem("Usersdata") || "[]";
     const prasedata = JSON.parse(Pendinng);
     const singupemail = document.getElementById("singup-email").value;
     const singupapass = document.getElementById("singup-password").value;
     let signin = false;
     for (const users of prasedata) {
       if (singupemail === users["Email"]) {
-        if (singupapass === users["Passkey"]) {
+        if (singupapass === users["Paskey"]) {
           signuser.reset();
+          const user = users;
+          localStorage.setItem("Currentuser", JSON.stringify(user));
           window.location.replace("../Dashboard");
           signin = true;
           break;
         } else {
           alert("Incorrect password did  you changed password?");
           signuser.focus();
+          signin = true;
         }
       }
     }
@@ -284,4 +278,13 @@ if (document.getElementById("login-container")) {
   });
 }
 
-//Only userpage
+if (document.getElementById("root")) {
+  const prifilename = document.getElementsByClassName("user-name-header");
+  const welcome = document.getElementById("user-welcome");
+  function fetchdata() {
+    const Currentuser = localStorage.getItem("Currentuser");
+    const Userdata = JSON.parse(Currentuser);
+    prifilename.textContent = Userdata["Name"];
+    welcome.textContent = Userdata["Name"];
+  }
+}

@@ -2236,3 +2236,356 @@
     font-size: 1.5rem;
   }
 }
+
+/* ============================================
+   404 ERROR PAGE STYLES - BK-TECH ACADEMY
+   ============================================ */
+
+.error-page-body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0a0e27 100%);
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.error-page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Animated Background Shapes */
+.error-bg-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: float 20s infinite ease-in-out;
+}
+
+.error-shape-1 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  top: -200px;
+  left: -200px;
+  animation-delay: 0s;
+}
+
+.error-shape-2 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  bottom: -150px;
+  right: -150px;
+  animation-delay: 7s;
+}
+
+.error-shape-3 {
+  width: 250px;
+  height: 250px;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  top: 50%;
+  right: 10%;
+  animation-delay: 14s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* Main Content Wrapper */
+.error-content-wrapper {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo/Brand */
+.error-logo {
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out 0.2s backwards;
+}
+
+.error-brand {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.error-brand-accent {
+  color: #3b82f6;
+  background: linear-gradient(135deg, #3b82f6, #60a5fa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 404 Image */
+.error-image-container {
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.error-image {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 40px rgba(59, 130, 246, 0.3));
+  animation: bounce 3s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Error Message Box */
+.error-message-box {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.8s ease-out 0.6s backwards;
+}
+
+.error-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #f1f5f9, #cbd5e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.error-description {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Action Buttons */
+.error-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out 0.8s backwards;
+}
+
+.error-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.error-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.6s,
+    height 0.6s;
+}
+
+.error-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.error-btn-primary {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4);
+}
+
+.error-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(59, 130, 246, 0.6);
+}
+
+.error-btn-secondary {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+}
+
+.error-btn-secondary:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+.error-btn-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.error-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Error Code Display */
+.error-code-display {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  font-size: 0.9rem;
+  animation: fadeInUp 0.8s ease-out 1s backwards;
+}
+
+.error-code-label {
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.error-code-value {
+  color: #3b82f6;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .error-page-container {
+    padding: 1.5rem;
+  }
+
+  .error-brand {
+    font-size: 1.5rem;
+  }
+
+  .error-image {
+    max-width: 280px;
+  }
+
+  .error-title {
+    font-size: 1.5rem;
+  }
+
+  .error-description {
+    font-size: 1rem;
+  }
+
+  .error-message-box {
+    padding: 1.5rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .error-btn {
+    justify-content: center;
+  }
+
+  .error-bg-shape {
+    filter: blur(60px);
+  }
+
+  .error-shape-1 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .error-shape-2 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .error-shape-3 {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-brand {
+    font-size: 1.25rem;
+  }
+
+  .error-image {
+    max-width: 220px;
+  }
+
+  .error-title {
+    font-size: 1.25rem;
+  }
+
+  .error-description {
+    font-size: 0.95rem;
+  }
+
+  .error-btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}

@@ -261,7 +261,7 @@ if (document.getElementById("login-container")) {
           signuser.reset();
           const user = users;
           localStorage.setItem("Currentuser", JSON.stringify(user));
-          window.location.replace("../Dashboard");
+          window.location.href = "../Dashboard";
           signin = true;
           break;
         } else {
@@ -283,10 +283,14 @@ if (document.getElementById("root")) {
   const welcome = document.getElementById("user-welcome");
   const avatar = document.getElementsByClassName("user-avatar-small");
   function fetchdata() {
-    const Currentuser = localStorage.getItem("Currentuser");
+    const Currentuser = localStorage.getItem("Currentuser") || "[]";
     const Userdata = JSON.parse(Currentuser);
-    const Av = (prifilename[0].textContent = Userdata["Name"]);
-    avatar[0].textContent = Av[0];
-    welcome.textContent = "Welcomeback ," + Userdata["Name"];
+    if (Userdata.length === 0) {
+      window.location.href = "../404";
+    } else {
+      const Av = (prifilename[0].textContent = Userdata["Name"]);
+      avatar[0].textContent = Av[0];
+      welcome.textContent = "Welcomeback ," + Userdata["Name"];
+    }
   }
 }

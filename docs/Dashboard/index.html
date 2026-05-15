@@ -8,9 +8,12 @@
     <link rel="icon" type="image/png" href="../assets/dashboard.png" />
   </head>
   <body onload="fetchdata()">
+    <!-- Mobile Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <div id="root">
       <div class="applicant-dashboard dark-mode">
-        <div class="sidebar">
+        <div class="sidebar" id="sidebar">
           <div class="sidebar-header">
             <div class="logo-area">
               <div class="logo-icon">
@@ -22,7 +25,11 @@
               </div>
               <span class="logo-text">BK-TECH Academy</span>
             </div>
-            <button class="sidebar-toggle" aria-label="Toggle sidebar">
+            <button
+              class="sidebar-toggle"
+              aria-label="Toggle sidebar"
+              id="sidebarClose"
+            >
               <svg
                 width="20"
                 height="20"
@@ -60,7 +67,7 @@
                 ><span class="category-name">Overview</span>
               </div>
               <div class="category-tabs">
-                <button class="nav-tab active" title="">
+                <a href="../404/" class="nav-tab active" title="">
                   <span class="tab-icon"
                     ><svg
                       width="20"
@@ -81,7 +88,7 @@
                         rx="1"
                       ></rect></svg></span
                   ><span class="tab-label">Dashboard</span>
-                </button>
+                </a>
               </div>
             </div>
             <div class="nav-category">
@@ -100,7 +107,7 @@
                 ><span class="category-name">Personal</span>
               </div>
               <div class="category-tabs">
-                <button class="nav-tab active" title="">
+                <a href="../404/" class="nav-tab active" title="">
                   <span class="tab-icon"
                     ><svg
                       width="20"
@@ -114,8 +121,8 @@
                         d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
                       ></path>
                       <circle cx="12" cy="7" r="4"></circle></svg></span
-                  ><span class="tab-label">My Profile</span></button
-                ><button class="nav-tab" title="">
+                  ><span class="tab-label">My Profile</span></a
+                ><a href="../404/" class="nav-tab" title="">
                   <span class="tab-icon"
                     ><svg
                       width="20"
@@ -132,7 +139,7 @@
                       <line x1="16" y1="13" x2="8" y2="13"></line>
                       <line x1="16" y1="17" x2="8" y2="17"></line></svg></span
                   ><span class="tab-label">Documents</span>
-                </button>
+                </a>
               </div>
             </div>
 
@@ -154,7 +161,7 @@
                 ><span class="category-name">Application</span>
               </div>
               <div class="category-tabs">
-                <button class="nav-tab" title="">
+                <a href="../404/" class="nav-tab" title="">
                   <span class="tab-icon"
                     ><svg
                       width="20"
@@ -168,8 +175,8 @@
                       <polyline
                         points="22 4 12 14.01 9 11.01"
                       ></polyline></svg></span
-                  ><span class="tab-label">My Application</span></button
-                ><button class="nav-tab" title="">
+                  ><span class="tab-label">My Application</span></a
+                ><a href="../404/" class="nav-tab" title="">
                   <span class="tab-icon"
                     ><svg
                       width="20"
@@ -184,7 +191,7 @@
                         points="12 6 12 12 16 14"
                       ></polyline></svg></span
                   ><span class="tab-label">Application Journey</span>
-                </button>
+                </a>
               </div>
             </div>
             <div class="nav-category">
@@ -205,7 +212,7 @@
                 ><span class="category-name">Trainee</span>
               </div>
               <div class="category-tabs">
-                <button class="nav-tab" title="">
+                <a href="../404/index.html" class="nav-tab" title="">
                   <span class="tab-icon"
                     ><svg
                       width="20"
@@ -218,8 +225,8 @@
                       <polygon
                         points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
                       ></polygon></svg></span
-                  ><span class="tab-label">Submit Feedback</span></button
-                ><button class="nav-tab" title="">
+                  ><span class="tab-label">Submit Feedback</span></a
+                ><a href="../404/index.html" class="nav-tab" title="">
                   <span class="tab-icon"
                     ><svg
                       width="20"
@@ -236,7 +243,7 @@
                       <line x1="16" y1="13" x2="8" y2="13"></line>
                       <line x1="16" y1="17" x2="8" y2="17"></line></svg></span
                   ><span class="tab-label">My Feedback</span>
-                </button>
+                </a>
               </div>
             </div>
             <div class="nav-category">
@@ -274,7 +281,7 @@
                 ><span class="category-name">Help &amp; Resources</span>
               </div>
               <div class="category-tabs">
-                <button class="nav-tab" title="">
+                <a href="../404/index.html" class="nav-tab" title="">
                   <span class="tab-icon"
                     ><svg
                       width="20"
@@ -301,8 +308,8 @@
                         stroke-width="1.5"
                         stroke-linecap="round"
                       ></path></svg></span
-                  ><span class="tab-label">How to Apply</span></button
-                ><button class="nav-tab" title="">
+                  ><span class="tab-label">How to Apply</span></a
+                ><a href="../404/index.html" class="nav-tab" title="">
                   <span class="tab-icon"
                     ><svg
                       width="20"
@@ -335,8 +342,8 @@
                         r="1"
                         fill="currentColor"
                       ></circle></svg></span
-                  ><span class="tab-label">FAQ</span></button
-                ><button class="nav-tab" title="">
+                  ><span class="tab-label">FAQ</span></a
+                ><a href="../404/" class="nav-tab" title="">
                   <span class="tab-icon"
                     ><svg
                       width="20"
@@ -364,7 +371,7 @@
                         fill="none"
                       ></path></svg></span
                   ><span class="tab-label">Contact Support</span>
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -394,7 +401,11 @@
         <div class="main-content">
           <header class="main-header">
             <div class="header-left">
-              <button class="mobile-menu-btn" aria-label="Menu">
+              <button
+                class="mobile-menu-btn"
+                aria-label="Menu"
+                id="mobileMenuBtn"
+              >
                 <svg
                   width="24"
                   height="24"

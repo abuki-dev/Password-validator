@@ -293,4 +293,58 @@ if (document.getElementById("root")) {
       welcome.textContent = "Welcomeback ," + Userdata["Name"];
     }
   }
+  document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const sidebar = document.getElementById("sidebar");
+    const sidebarOverlay = document.getElementById("sidebarOverlay");
+    const sidebarClose = document.getElementById("sidebarClose");
+
+    // Open sidebar
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener("click", function () {
+        sidebar.classList.add("open");
+        sidebarOverlay.classList.add("active");
+        document.body.style.overflow = "hidden"; // Prevent scrolling when menu is open
+      });
+    }
+
+    // Close sidebar when clicking close button
+    if (sidebarClose) {
+      sidebarClose.addEventListener("click", function () {
+        sidebar.classList.remove("open");
+        sidebarOverlay.classList.remove("active");
+        document.body.style.overflow = ""; // Restore scrolling
+      });
+    }
+
+    // Close sidebar when clicking overlay
+    if (sidebarOverlay) {
+      sidebarOverlay.addEventListener("click", function () {
+        sidebar.classList.remove("open");
+        sidebarOverlay.classList.remove("active");
+        document.body.style.overflow = ""; // Restore scrolling
+      });
+    }
+
+    // Close sidebar when clicking any nav tab (mobile only)
+    const navTabs = document.querySelectorAll(".nav-tab");
+    navTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        if (window.innerWidth <= 1024) {
+          sidebar.classList.remove("open");
+          sidebarOverlay.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      });
+    });
+
+    // Handle window resize
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1024) {
+        sidebar.classList.remove("open");
+        sidebarOverlay.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+  });
 }
